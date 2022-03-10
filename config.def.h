@@ -9,13 +9,13 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int extrabar           = 1;        /* 0 means no extra bar */
 static const char statussep         = ';';      /* separator between statuses */
-static const char font[]            = "monospace 10";
-static const char dmenufont[]       = "monospace:size=10";
+static const char font[]            = "Iosevka, Fontawesome, Unifont 10";
+static const char dmenufont[]       = "Iosevka, Fontawesome, Unifont 10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_gray4[]       = "#767676";
+static const char col_cyan[]        = "#662277";
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
@@ -30,8 +30,8 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *defaulttagapps[] = { "st", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL };
+static const char *tags[] = { "", "", "", "", "", "6", "7", "8", "9" };
+static const char *defaulttagapps[] = { "emacs", "icecat", "st", "libreoffice", "virt-manager", NULL, NULL, NULL, NULL };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -58,7 +58,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
