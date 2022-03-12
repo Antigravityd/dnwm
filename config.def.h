@@ -142,4 +142,4 @@ static Button buttons[] = {
 /* on a stock dwm install, this seems to be two; however, you'll have to
  * change it depending on how many invisible X windows exist */
 /* you can get a list with `xwininfo -tree -root`. */
-static const int EMPTY_WINDOW_COUNT = 3;
+static const int EMPTY_WINDOW_COUNT = 4;
