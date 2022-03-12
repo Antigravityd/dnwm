@@ -848,7 +848,7 @@ drawbar(Monitor *m)
 		}
 
 		x += w;
-	}
+ 	}
 	w = blw = TEXTW(m->ltsymbol);
 	drw_setscheme(drw, scheme[SchemeNorm]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0, False);
@@ -870,9 +870,9 @@ drawbar(Monitor *m)
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		/* clear default bar draw buffer by drawing a blank rectangle */
 		drw_rect(drw, 0, 0, m->ww, bh, 1, 1);
-		etwr = TEXTW(estextr) - lrpad + 2; /* 2px right padding */
+		etwr = TEXTWM(estextr) - lrpad + 2; /* 2px right padding */
 		drw_text(drw, m->ww - etwr, 0, etwr, bh, 0, estextr, 0, True);
-		etwl = TEXTW(estextl);
+		etwl = TEXTWM(estextl);
 		drw_text(drw, 0, 0, etwl, bh, 0, estextl, 0, True);
 		drw_map(drw, m->extrabarwin, 0, 0, m->ww, bh);
 	}
