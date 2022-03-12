@@ -1,0 +1,47 @@
+
+* DNWM
+
+My fork of [[https://dwm.suckless.org/][suckless dwm]]. Included patches are:
+
+** Active Tag Indicators
+
+Draw a little pixel on the bar for each client open on a tag. Make the active one a into a little line.
+
+** Alpha
+
+Make the bar transparent.
+
+** Client Indicators Hide Vacant
+
+Prevent empty tags from showing on the bar.
+
+** Default Tag Apps
+
+Ability to spawn an app associated with a particular tag. In my case,
+
+|   1 | Emacs          |
+|   2 | GNU Ice Cat    |
+|   3 | Terminal (xst) |
+|   4 | LibreOffice    |
+|   5 | Virtmanager    |
+| ... | Undefined      |
+
+** Extrabar
+
+Produces another status bar at the bottom, with text settable via the =xsetroot -name= command. Semicolons are the default field separator between text in the normal bar, the left-justified part of the extra bar, and the right-justified part of the extra bar.
+
+** Only Quit On Empty
+
+Changes =Mod-Q= to only kill dwm if the number of windows is the minimum number. In my case, this is 4, but this is highly variable based on e.g. how many programs are run in =.xinitrc=. Adds =C-Mod-Q= to override this limit and kill anyway.
+
+** Pango
+
+Makes extensive rich-text markup on the status bar possible. Used by my status script to set stock tickers to green and red; hope to use it for more in the future.
+
+** Ru Gaps
+
+One of many gaps patches that happens to do things the way I like. No borders or gaps in monocle or sole window, runtime resizable, etc.
+
+** Swallow
+
+Only one I'm not sure is working at the moment. Is supposed to hide a blocked background process that spawns a window, e.g. launching a synchronous X application from a terminal hides the terminal until the application closes.
