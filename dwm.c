@@ -1830,9 +1830,10 @@ spawn(const Arg *arg)
 void
 spawndefault()
 {
-	const char **app = defaulttagapps[lastchosentag[selmon->num]];
+	const char *app = defaulttagapps[lastchosentag[selmon->num]];
 	if (app) {
-		Arg a = {.v = app};
+		const char *defaultcmd[] = {app, NULL};
+		Arg a = {.v = defaultcmd};
 		spawn(&a);
 	}
 }

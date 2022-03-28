@@ -31,7 +31,7 @@ static const unsigned int alphas[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "", "", "", "", "", "6", "7", "8", "9" };
-static const char **defaulttagapps[] = { {"emacs"}, {"icecat"}, {"xst", "-A", "0.6"}, {"libreoffice"}, {"virt-manager"}, NULL, NULL, NULL, NULL };
+static const char *defaulttagapps[] = { "emacs", "icecat", "xst -A 0.6", "libreoffice", "virt-manager", NULL, NULL, NULL, NULL };
 
 static const Rule rules[] = {
 	/* xprop(1):
