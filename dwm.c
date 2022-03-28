@@ -2572,7 +2572,7 @@ zoom(const Arg *arg)
 int
 main(int argc, char *argv[])
 {
-  flog("main entered.\n");
+
 	if (argc == 2 && !strcmp("-v", argv[1]))
 		die("dwm-"VERSION);
 	else if (argc != 1)
@@ -2584,18 +2584,17 @@ main(int argc, char *argv[])
 	if (!(xcon = XGetXCBConnection(dpy)))
 		die("dwm: cannot get xcb connection\n");
 	checkotherwm();
-	flog("check returned.\n");
+
 	setup();
-	flog("setup returned.\n");
+
 #ifdef __OpenBSD__
 	if (pledge("stdio rpath proc exec ps", NULL) == -1)
 		die("pledge");
 #endif /* __OpenBSD__ */
 
 	scan();
-	flog("scan returned.\n");
 	run();
-	flog("run returned.\n");
+
 	cleanup();
 	XCloseDisplay(dpy);
 	return EXIT_SUCCESS;

@@ -6,21 +6,6 @@
 
 #include "util.h"
 
-void
-flog(const char *msg, ...) {
-  FILE *fp = fopen("/home/dnw/log.txt", "a+");
-
-  va_list ap;
-
-  va_start(ap, msg);
-  vfprintf(fp, msg, ap);
-  va_end(ap);
-
-  fclose(fp);
-
-}
-
-
 void *
 ecalloc(size_t nmemb, size_t size)
 {
