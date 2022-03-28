@@ -530,7 +530,7 @@ buttonpress(XEvent *e)
 			/* do not reserve space for vacant tags */
 			if (!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))
 				continue;
-			x += TEXTW(tags[i]);
+			x += TEXTWM(tags[i]);
 		} while (ev->x >= x && ++i < LENGTH(tags));
 		if (i < LENGTH(tags)) {
 			click = ClkTagBar;
@@ -542,9 +542,9 @@ buttonpress(XEvent *e)
 		else
 			click = ClkWinTitle;
 	} else if (ev->window == selmon->extrabarwin) {
-		if (ev->x < (int)TEXTW(estextl))
+		if (ev->x < (int)TEXTWM(estextl))
 			click = ClkExBarLeftStatus;
-		else if (ev->x > selmon->ww - (int)TEXTW(estextr))
+		else if (ev->x > selmon->ww - (int)TEXTWM(estextr))
 			click = ClkExBarRightStatus;
 		else
 			click = ClkExBarMiddle;
@@ -819,7 +819,7 @@ drawbar(Monitor *m)
 	/* draw status first so it can be overdrawn by tags later */
 	if (m == selmon) { /* status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
-		sw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
+		sw = TEXTWM(stext) - lrpad + 2; /* 2px right padding */
 		drw_text(drw, m->ww - sw, 0, sw, bh, 0, stext, 0, True);
 	}
 
@@ -835,7 +835,7 @@ drawbar(Monitor *m)
 		continue;
 
 		indn = 0;
-		w = TEXTW(tags[i]);
+		w = TEXTWM(tags[i]);
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
 
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i, False);
@@ -849,7 +849,7 @@ drawbar(Monitor *m)
 
 		x += w;
  	}
-	w = blw = TEXTW(m->ltsymbol);
+	w = blw = TEXTWM(m->ltsymbol);
 	drw_setscheme(drw, scheme[SchemeNorm]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0, False);
 
